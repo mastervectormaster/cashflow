@@ -1,10 +1,10 @@
  
-![Cashflow Logo](./1.PNG)  
+<p align="center" style="margin-bottom: 0px !important;">
+  <img width="200" src="1.PNG" alt="Cashflow Logo" align="center">
+</p>
+<h1 align="center" style="margin-top: 0px;">Cash Flow</h1>
 
-# Cash Flow
-**Manage & Monitor Internal Money Flow**
-
-This project is intended as a internal tool that can be easily integrated into a microservice-architectured system
+This project is intended as a internal tool for ease of management of Cash
 
 ## Features
 - Income Management
