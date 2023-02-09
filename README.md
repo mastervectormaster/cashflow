@@ -1,5 +1,5 @@
  
-![Cashflow Logo](./1.png)  
+![Cashflow Logo](./1.PNG)  
 
 # Cash Flow
 **Manage & Monitor Internal Money Flow**
