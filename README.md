@@ -1,29 +1,30 @@
- 
 <p align="center" style="margin-bottom: 0px !important;">
-  <img width="200" src="1.PNG" alt="Cashflow Logo" align="center">
+  <img width="200" src="logo.png" alt="Cashflow Logo" align="center">
 </p>
 <h1 align="center" style="margin-top: 0px;">Cash Flow</h1>
 
 This project is intended as a internal tool for ease of management of Cash
 
 ## Features
+
 - Income Management
-    - Sumit Income
-    - Approve Income
+  - Sumit Income
+  - Approve Income
 - Expense Management
-    - Submit Expense
-    - Approve Expense (TBD)
-    - Schedule Expense
+  - Submit Expense
+  - Approve Expense (TBD)
+  - Schedule Expense
 - Analysis/Export
-    - Overall (monthly,yearly)
-    - Groups (monthly, yearly)
-    - Individuals (monthly, yearly)
+  - Overall (monthly,yearly)
+  - Groups (monthly, yearly)
+  - Individuals (monthly, yearly)
 
 ## Architecture
 
 This itself is implemented as microservice architecture.
 
 ### Microservices included
+
 - Auth
 - User
 - REST API Gateway
@@ -31,6 +32,7 @@ This itself is implemented as microservice architecture.
 - Schedule
 
 ## Tech Stack
+
 - GoLang/Gin
 - OpenAPI/AsyncAPI
 - AWS (TBD)
@@ -47,22 +49,22 @@ The live OpenAPI specification of the Cashflow REST API can be found [here](http
 
 The live AsyncAPI specification of the Ludo Socket.io API can be found [here](https://async-api-test.ludoempire.com/) (TODO)
 
- 
-## Run Locally  
-Clone the project  
+## Run Locally
 
-~~~bash  
+Clone the project
+
+```bash
   git clone https://github.com/mastervectormaster/cashflow
-~~~
+```
 
-Go to the project directory  
+Go to the project directory
 
-~~~bash  
+```bash
   cd cashflow
-~~~
+```
 
-Run the docker container env  
+Run the docker container env
 
-~~~bash  
+```bash
 npm run dev
-~~~  
+```
