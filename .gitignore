@@ -4,6 +4,8 @@
 *.dll
 *.so
 *.dylib
+.ash_history
+.cache
 
 # Test binary, built with `go test -c`
 *.test

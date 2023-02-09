@@ -1,0 +1,21 @@
+{
+  "name": "cashflow",
+  "version": "1.0.0",
+  "description": "**Manage & Monitor Internal Money Flow**",
+  "main": "index.js",
+  "scripts": {
+    "dev": "docker compose -f docker-compose-dev.yaml up",
+    "dev:stop": "docker compose -f docker-compose-dev.yaml down",
+    "dev:rm": "npm run dev:stop && docker compose -f docker-compose-dev.yaml down --rmi local"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/mastervectormaster/cashflow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mastervectormaster/cashflow/issues"
+  },
+  "homepage": "https://github.com/mastervectormaster/cashflow#readme"
+}
