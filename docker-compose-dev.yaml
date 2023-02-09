@@ -1,0 +1,22 @@
+services:
+  db:
+    volumes:
+      - mongodb:/data/db
+    command: mongod --quiet --logpath /dev/null
+    image: mongo:latest
+    ports:
+      - "27027:27017"
+
+  cashflow-rest:
+    build:
+      context: .
+      dockerfile: apps/cashflow-rest/Dockerfile.dev
+    working_dir: /root
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - 3001:3001
+    volumes:
+      - .:/root
+volumes:
+  mongodb:

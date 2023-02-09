@@ -1,9 +1,9 @@
 package main
 
 import (
-	"cashflow-rest/configs"
-
 	"github.com/gin-gonic/gin"
+
+	"github.com/mastervectormaster/cashflow/apps/cashflow-rest/configs"
 )
 
 func main() {

@@ -1,0 +1,24 @@
+FROM golang:1.18-alpine
+
+# FROM node:18-alpine
+
+WORKDIR /root
+
+# EXPOSE 3001
+
+# RUN npm install -g nodemon
+
+# RUN cd apps/cashflow-rest
+COPY go.mod ./
+COPY go.sum ./
+RUN go mod download
+# RUN go mod download github.com/go-playground/validator/v10
+
+COPY ./ ./
+
+# RUN go build -o /cash-flow
+
+# CMD [ "nodemon" "--exec" "go", "run", "main.go" "--signal" "SIGTERM"]
+CMD [ "go", "run", "./apps/cashflow-rest/main.go"]
+# CMD [ "/cash-flow" ]
+# CMD [ "go", "version"]

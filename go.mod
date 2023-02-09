@@ -1,4 +1,4 @@
-module cashflow-rest
+module github.com/mastervectormaster/cashflow
 
 go 1.18
 
