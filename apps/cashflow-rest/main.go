@@ -1,9 +1,9 @@
 package main
 
 import (
-	"cashflow-rest/configs"
-
 	"github.com/gin-gonic/gin"
+
+	"github.com/mastervectormaster/cashflow/apps/cashflow-rest/configs"
 )
 
 func main() {
@@ -11,11 +11,12 @@ func main() {
 	//run database
 	configs.ConnectDB()
 
+	// Health Check
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
-			"data": "Hello from Gin-gonic & mongoDB",
+			"status": "OK",
 		})
 	})
 
-	router.Run("localhost:" + configs.RestPort())
+	router.Run("0.0.0.0:" + configs.RestPort())
 }

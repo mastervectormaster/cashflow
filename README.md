@@ -68,3 +68,9 @@ Run the docker container env
 ```bash
 npm run dev
 ```
+
+Stop the docker container env
+
+```bash
+npm run dev:stop
+```
