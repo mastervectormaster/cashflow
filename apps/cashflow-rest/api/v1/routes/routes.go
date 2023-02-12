@@ -7,4 +7,5 @@ import (
 
 func SetupRouter(router *gin.RouterGroup) {
 	router.GET("/", controllers.HealthCheck)
+	router.POST("/income", controllers.ReportIncome)
 }
