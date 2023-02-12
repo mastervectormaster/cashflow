@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"github.com/mastervectormaster/cashflow/apps/cashflow-rest/configs"
 	_ "github.com/mastervectormaster/cashflow/apps/cashflow-rest/docs"
+	"github.com/mastervectormaster/cashflow/apps/cashflow-rest/routes"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
@@ -22,18 +22,16 @@ import (
 // @host      localhost:3001
 // @BasePath  /api/v1
 func main() {
-	router := gin.Default()
-	//run database
+
+	// Setup Routes
+	router := routes.SetupRouter()
+
+	// Connect to DB
 	configs.ConnectDB()
 
+	// Run Swagger UI
 	router.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
-	// Health Check
-	router.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"status": "OK",
-		})
-	})
-
+	// Start Server
 	router.Run("0.0.0.0:" + configs.RestPort())
 }
