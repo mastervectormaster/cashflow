@@ -3,12 +3,15 @@ version: 2.1
 orbs:
   aws-ecr: circleci/aws-ecr@8.2.1
   aws-ecs: circleci/aws-ecs@3.2.0
-  aws-cli: circleci/aws-cli@3.1.4
 
 workflows:
   build-and-deploy:
     jobs:
       - aws-ecr/build-and-push-image:
+          filters:
+            branches:
+              only:
+                - main
           path: apps/cashflow-rest
           extra-build-args: --build-arg app=cashflow-rest
           repo: ${CIRCLE_PROJECT_REPONAME}
