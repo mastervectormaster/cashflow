@@ -11,7 +11,7 @@ services:
   cashflow-rest:
     build:
       context: .
-      dockerfile: apps/cashflow-rest/Dockerfile.dev
+      dockerfile: apps/cashflow-rest/Dockerfile
     restart: unless-stopped
     env_file: ./.env
     ports:

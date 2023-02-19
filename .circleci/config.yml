@@ -1,0 +1,25 @@
+version: 2.1
+
+orbs:
+  aws-ecr: circleci/aws-ecr@8.2.1
+  aws-ecs: circleci/aws-ecs@3.2.0
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - aws-ecr/build-and-push-image:
+          filters:
+            branches:
+              only:
+                - main
+          path: apps/cashflow-rest
+          extra-build-args: --build-arg app=cashflow-rest
+          repo: ${CIRCLE_PROJECT_REPONAME}
+          tag: "${CIRCLE_SHA1}"
+      - aws-ecs/deploy-service-update:
+          requires:
+            - aws-ecr/build-and-push-image # only run this job once aws-ecr/build-and-push-image has completed
+          family: "${AWS_RESOURCE_NAME_PREFIX}-service"
+          service-name: "${AWS_RESOURCE_NAME_PREFIX}-service"
+          cluster: "${AWS_RESOURCE_NAME_PREFIX}-cluster"
+          container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX}-service,tag=${CIRCLE_SHA1}"
