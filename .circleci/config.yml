@@ -8,6 +8,8 @@ workflows:
   build-and-deploy:
     jobs:
       - aws-ecr/build-and-push-image:
+          path: apps/cashflow-rest
+          extra-build-args: --build-arg app=cashflow-rest
           repo: ${CIRCLE_PROJECT_REPONAME}
           tag: "${CIRCLE_SHA1}"
       - aws-ecs/deploy-service-update:
