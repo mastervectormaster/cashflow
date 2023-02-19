@@ -21,4 +21,6 @@ tmp
 .env
 
 # Auto Generated files
+*.tfvars
 docs
+.terraform
