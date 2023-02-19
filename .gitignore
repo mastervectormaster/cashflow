@@ -6,18 +6,21 @@
 *.dylib
 .ash_history
 .cache
+tmp
 
 # Test binary, built with `go test -c`
 *.test
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
-tmp
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
+# Env files
 .env
+
+# Auto Generated files
 *.tfvars
 docs
 .terraform
